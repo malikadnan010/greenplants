@@ -4,441 +4,463 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>IPDC</title>
+  <title>GREENMIND</title>
   <link rel="stylesheet" href="src/style.css">
-  <script src="https://kit.fontawesome.com/2aa6a5b5b0.js" crossorigin="anonymous"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+  <link rel="icon" type="image/png" href="src/images/icon.png">
+
+
 </head>
 
-<body class="bg-gray-50">
-  <div>
-    <!-- Navbar -->
-<header class="container mx-auto flex justify-between items-center pt-5 px-5">
-  <!-- Logo -->
-  <div class="max-w-[100px]">
-    <img src="./src/images/logo.png" alt="Logo">
+<body>
+
+  <header class="container mx-auto mt-10 flex items-center justify-between px-8 relative">
+    <!-- Logo -->
+    <h1 class="font-['Dancing_Script'] text-2xl sm:text-3xl font-bold text-[#2d5d5d] 
+         transition duration-300 hover:text-[#1a3c3c] hover:scale-110 cursor-pointer">
+      GREENMIND
+    </h1>
+
+    <!-- Nav  -->
+    <nav class="hidden md:flex text-lg gap-6">
+      <a href="#" class="px-3 py-1 rounded-lg hover:bg-[#C1DCDC] hover:text-white transition">Home</a>
+      <a href="#" class="px-3 py-1 rounded-lg hover:bg-[#C1DCDC] hover:text-white transition">Products</a>
+      <a href="#" class="px-3 py-1 rounded-lg hover:bg-[#C1DCDC] hover:text-white transition">Contacts</a>
+    </nav>
+
+    <!-- Icons -->
+    <div class="flex items-center gap-4 text-xl sm:gap-6 sm:text-2xl">
+      <ion-icon name="cart-outline" class="hover:text-[#C1DCDC]"></ion-icon>
+      <ion-icon name="person-outline" class="hover:text-[#C1DCDC]"></ion-icon>
+
+      <!-- Hamburger (mobile only) -->
+      <button id="menu-btn" class="md:hidden text-2xl sm:text-3xl focus:outline-none">
+        <ion-icon name="menu-outline"></ion-icon>
+      </button>
+    </div>
+  </header>
+
+  <!-- Overlay Background -->
+  <div id="overlay" class="hidden fixed inset-0 bg-black bg-opacity-50 z-40"></div>
+
+  <!-- Drawer Menu -->
+  <div id="drawer"
+    class=" fixed top-0 right-0 h-full w-64 bg-[#C1DCDC] shadow-lg z-50 transform translate-x-full transition-transform duration-300 flex flex-col p-6 text-white">
+
+    <!-- Close Button -->
+    <button id="close-btn" class="self-end text-3xl mb-8">
+      <ion-icon name="close-outline"></ion-icon>
+    </button>
+
+    <!-- Menu Links -->
+    <nav class="flex flex-col gap-6 text-lg">
+      <a href="#" class="hover:underline">Home</a>
+      <a href="#" class="hover:underline">Products</a>
+      <a href="#" class="hover:underline">Contacts</a>
+    </nav>
   </div>
 
-  <!-- Nav Menu (hidden on mobile) -->
-  <nav class="hidden lg:flex max-w-[620px] justify-between w-full list-none font-bold">
-    <li><a href="#" class="text-sm md:text-[15px] leading-[20px] text-[#010101] hover:text-[#ED017F]">Retail</a></li>
-    <li><a href="#" class="text-sm md:text-[15px] leading-[20px] text-[#010101] hover:text-[#ED017F]">SME</a></li>
-    <li><a href="#" class="text-sm md:text-[15px] leading-[20px] text-[#010101] hover:text-[#ED017F]">Corporate</a></li>
-    <li><a href="#" class="text-sm md:text-[15px] leading-[20px] text-[#010101] hover:text-[#ED017F]">About Us</a></li>
-    <li><a href="#" class="text-sm md:text-[15px] leading-[20px] text-[#010101] hover:text-[#ED017F]">Covid 19</a></li>
-    <li><a href="#" class="text-sm md:text-[15px] leading-[20px] text-[#010101] hover:text-[#ED017F]">Campaigns</a></li>
-  </nav>
 
-  <!-- Search + Button -->
-  <div class="max-w-[200px] w-full flex items-center gap-5 justify-end">
-    <div class="text-xl md:text-2xl text-[#ED017F]">
-      <i class="fa-solid fa-magnifying-glass hover:text-pink-950"></i>
+  <div class="p-10">
+    <div
+      class="container  mx-auto max-w-[1548px]  bg-[#C1DCDC] rounded-3xl mt-10 px-6 sm:px-10 lg:px-16 py-10 lg:py-16 flex flex-col lg:flex-row items-center gap-10 relative overflow-hidden">
+
+      <!-- Left Content -->
+      <div class="w-full lg:w-1/2 flex flex-col items-center lg:items-start text-center lg:text-left">
+        <h1
+          class="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight relative 
+         cursor-pointer transition duration-500 hover:scale-105 hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#1a3c3c] hover:to-[#4fbdbd]">
+          Buy your dream plants
+          <span
+            class="absolute left-0 bottom-0 w-0 h-1 bg-[#1a3c3c] transition-all duration-500 group-hover:w-full"></span>
+        </h1>
+
+
+        <!-- Stats -->
+        <div class="flex flex-row items-center gap-6 mt-8">
+          <!-- First Stat -->
+          <div class="group transition duration-500 hover:scale-110 cursor-pointer text-center">
+            <h3 class="text-2xl sm:text-3xl font-semibold transition duration-500 
+             group-hover:text-transparent group-hover:bg-clip-text 
+             group-hover:bg-gradient-to-r group-hover:from-[#1a3c3c] group-hover:to-[#4fbdbd]">
+              50+
+            </h3>
+            <p class="text-gray-700 font-medium transition duration-500 group-hover:text-[#1a3c3c]">
+              Plant Species
+            </p>
+          </div>
+
+          <span class="text-4xl font-light text-gray-400">|</span>
+
+          <!-- Second Stat -->
+          <div class="group transition duration-500 hover:scale-110 cursor-pointer text-center">
+            <h3 class="text-2xl sm:text-3xl font-semibold transition duration-500 
+             group-hover:text-transparent group-hover:bg-clip-text 
+             group-hover:bg-gradient-to-r group-hover:from-[#1a3c3c] group-hover:to-[#4fbdbd]">
+              100+
+            </h3>
+            <p class="text-gray-700 font-medium transition duration-500 group-hover:text-[#1a3c3c]">
+              Customers
+            </p>
+          </div>
+        </div>
+
+        <!-- Search Bar -->
+        <div class="relative w-full max-w-md mt-8">
+          <input type="text" placeholder="What are you looking for?"
+            class="bg-white w-full p-3 pr-12 rounded-xl font-medium border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#88bfbf] shadow-sm hover:bg-green-100">
+          <button class="absolute right-3 top-1/2 -translate-y-[13px] text-gray-500 hover:text-[#2d5d5d] transition">
+            <ion-icon name="search-outline" class="text-2xl hover:text-[#C1DCDC]"></ion-icon>
+          </button>
+        </div>
+      </div>
+
+      <!-- Right Content (Images) -->
+      <div class="w-full lg:w-1/2 relative flex justify-center items-end h-full">
+
+        <img src="src/images/Rectangle 2.png" alt="" class="w-[80%] sm:w-[70%] lg:w-[75%] h-auto object-contain">
+
+
+<!-- Arrows -->
+<img src="src/images/arrow right.png" alt=""
+  class="absolute left-[-10px] sm:left-[-30px] top-1/3 
+         w-12 sm:w-20 md:w-28 opacity-80 hover:scale-110 transition">
+
+<img src="src/images/arrow left.png" alt=""
+  class="absolute right-[-10px] sm:right-[-10px] top-10 
+         w-10 sm:w-16 md:w-24 opacity-80 hover:scale-110 transition">
+
+
+
+        <img src="src/images/hero-plant.png" alt="" class="absolute z-10 bottom-0 w-[60%] sm:w-[55%] lg:w-[65%] object-contain 
+  transition-transform duration-500 ease-in-out hover:scale-105 hover:-rotate-2 hover:drop-shadow-2xl">
+
+      </div>
+
     </div>
+  </div>
+
+
+
+  <div class="best-selling container mx-auto w-full mt-20 px-10">
+
+
+    <div class="flex flex-col lg:flex-row justify-between items-center gap-10">
+
+      <!-- Text Section -->
+      <div
+        class="w-full lg:max-w-[220px] text-center md:text-center lg:text-left flex flex-col items-center lg:items-start">
+        <h1 class="font-bold text-2xl sm:text-3xl mb-5">Best Selling Plants</h1>
+        <p class="text-[#999] mb-5 text-sm sm:text-base max-w-[300px]">
+          Easiest way to healthy life by buying your favorite plants
+        </p>
+        <button
+          class="px-6 py-2 flex items-center gap-2 bg-[#C1DCDC] rounded  hover:bg-gray-200 hover:scale-105 shadowtransition duration-300 ">
+          See more
+          <ion-icon name="arrow-forward-outline"></ion-icon>
+        </button>
+
+      </div>
+
+
+      <div
+        class="flex flex-col sm:flex-row flex-wrap gap-6 sm:gap-8 lg:gap-10 justify-center items-center lg:items-start xl:px-50 2xl:px-10">
+
+        <!-- Card -->
+        <div
+          class="bg-white shadow rounded-xl p-4 text-center cursor-pointer transform transition duration-300 hover:shadow-2xl hover:-translate-y-2 hover:scale-105">
+          <div class="w-full h-[260px] flex items-center justify-center">
+            <img src="src/images/sell plant 1.png" alt="Natural Plants"
+              class="max-h-full max-w-full object-contain transition duration-300 hover:scale-110">
+          </div>
+          <h6 class="font-medium mt-4">Natural Plants</h6>
+          <p class="text-gray-600">Rs 5,000</p>
+        </div>
+
+        <!-- Card -->
+        <div
+          class="bg-white shadow rounded-xl p-4 text-center cursor-pointer transform transition duration-300 hover:shadow-2xl hover:-translate-y-2 hover:scale-105">
+          <div class="w-full h-[260px] flex items-center justify-center">
+            <img src="src/images/sell plant 2.png" alt="Artificial Plants"
+              class="max-h-full max-w-full object-contain transition duration-300 hover:scale-110">
+          </div>
+          <h6 class="font-medium mt-4">Artificial Plants</h6>
+          <p class="text-gray-600">Rs 10,000</p>
+        </div>
+
+        <!-- Card -->
+        <div
+          class="bg-white shadow rounded-xl p-4 text-center cursor-pointer transform transition duration-300 hover:shadow-2xl hover:-translate-y-2 hover:scale-105">
+          <div class="w-full h-[260px] flex items-center justify-center">
+            <img src="src/images/sell plant 3.png" alt="Artificial Plants"
+              class="max-h-full max-w-full object-contain transition duration-300 hover:scale-110">
+          </div>
+          <h6 class="font-medium mt-4">Artificial Plants</h6>
+          <p class="text-gray-600">Rs 9,000</p>
+        </div>
+
+        <!-- Card -->
+        <div
+          class="bg-white shadow rounded-xl p-4 text-center cursor-pointer transform transition duration-300 hover:shadow-2xl hover:-translate-y-2 hover:scale-105">
+          <div class="w-full h-[260px] flex items-center justify-center">
+            <img src="src/images/sell plant 4.png" alt="Plant"
+              class="max-h-full max-w-full object-contain rounded transition duration-300 hover:scale-110">
+          </div>
+          <h6 class="font-medium mt-4">Plant Name</h6>
+          <p class="text-gray-600">Rs 7,500</p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+
+  <div class="about-us container mx-auto text-center w-full mt-20 px-4">
+
     <div>
-      <button class="py-2 px-4 rounded-md bg-[#ED017F] text-white hover:bg-pink-300 hover:text-white font-medium text-sm md:text-base">iSERVICE</button>
-    </div>
-  </div>
-</header>
-
-<!-- Hero Section -->
-<section class="container mx-auto flex flex-col lg:flex-row lg:justify-between items-center px-5 mt-10 relative">
-  <!-- Left Side: Text -->
-  <div class="max-w-[410px] w-full lg:w-1/2 text-center lg:text-left space-y-5">
-    <h1 class="text-2xl sm:text-3xl  md:text-3xl  lg:text-5xl font-bold">
-      Chase Your Dream with us
-    </h1>
-    <p class="text-[#999] font-medium text-sm sm:text-base">
-      The harder you work for something, the greater you'll feel when you achieve it.
-    </p>
-
-    <!-- Buttons -->
-    <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-      <button class="py-3 px-6 bg-[#ED017F] rounded-md text-white hover:bg-pink-300 font-medium">
-        Apply Online
-      </button>
-      <button class="py-3 px-6 border-2 border-[#ED017F] text-[#ED017F] rounded-md hover:bg-pink-300 hover:text-white font-medium">
-        Loan Calculator
-      </button>
+      <h1 class="font-bold text-2xl sm:text-3xl mb-5">About us</h1>
+      <p class="text-[#999]">Order now and appreciate the beauty of nature</p>
     </div>
 
-    <!-- Contact + Social -->
-    <div class="flex justify-center lg:justify-start gap-4 items-center mt-10 text-base sm:text-lg">
-      <i class="fa-solid fa-phone text-[#ED017F]"></i>
-      <h1 class="font-bold">16519</h1>
-      <span>|</span>
-      <i class="fa-brands fa-facebook-f text-[#4B7FCD]"></i>
-      <i class="fa-brands fa-youtube text-[#FF0000]"></i>
-      <i class="fa-brands fa-linkedin-in text-[#4A71FB]"></i>
-      <i class="fa-brands fa-instagram text-[#ED017F]"></i>
-    </div>
-  </div>
+    <!-- Cards Section -->
+    <div
+      class="flex flex-col sm:flex-row flex-wrap gap-6 sm:gap-8 lg:gap-10 justify-center items-center lg:items-start mt-20">
 
-  <!-- Right Side: Image -->
-  <div class="w-full lg:w-1/2 relative mt-10 lg:mt-0">
-    <img class="w-full max-w-[400px] sm:max-w-[500px] md:max-w-[600px] lg:max-w-[700px] xl:max-w-[850px] mx-auto" src="src/images/hero-image.png" alt="Hero">
-
-    <!-- Background Shape -->
-    <div class=" absolute  inset-0 bg-[#FFEAF5] -z-10 rounded-lg"></div>
-
-    <!-- Floating Buttons -->
-    <div class="absolute top-10 left-5 md:left-15 ">
-      <button class="px-5 py-3 bg-white rounded-full flex items-center gap-2 font-bold shadow-md md:py-2 md:px-2 ">
-        <i class="fa-solid fa-car-side text-[#ED017F]"></i> Car Loans
-      </button>
-    </div>
-    <div class="absolute top-40 right-5 md:right-5 md:top-25">
-      <button class="px-5 py-3 bg-white rounded-full flex items-center gap-2 font-bold shadow-md md:py-2 md:px-2">
-        <i class="fa-solid fa-house text-[#ED017F]"></i> Home Loan
-      </button>
-    </div>
-  </div>
-</section>
-
-<div class="cards w-full py-12 px-4">
-  <div class="container mx-auto flex flex-col items-center justify-center">
-    
-    <!-- Heading -->
-    <div class="max-w-[900px] flex flex-col items-center text-center px-4">
-      <h1 class="font-bold text-2xl sm:text-3xl md:text-4xl lg:text-5xl">
-        Creating Extraordinary Customer Experience
-      </h1>
-      <p class="text-[#999] mt-4 text-sm sm:text-base md:text-lg">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
-        bibendum eget morbi dignissim eu pharetra consequat montes, sagittis.
-      </p>
-    </div>
-
-    <!-- Cards -->
-    <div class="cards-boxes max-w-[1230px] w-full pt-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-      
-      <!-- Card -->
-      <div class="card-box bg-white rounded-2xl p-6 shadow hover:shadow-lg transition">
-        <img src="src/images/Circle Layer 1.svg" alt="">
-        <h1 class="font-bold text-lg sm:text-xl pt-3">Integrity</h1>
-        <p class="text-[#999] text-sm sm:text-base pt-2">
-          Displaying the highest level of Integrity in the way we conduct our business
-        </p>
-      </div>
-
-      <div class="card-box bg-white rounded-2xl p-6 shadow hover:shadow-lg transition">
-        <img src="src/images/Circle Layer 2.svg" alt="">
-        <h1 class="font-bold text-lg sm:text-xl pt-3">Demonstrate</h1>
-        <p class="text-[#999] text-sm sm:text-base pt-2">
-          Demonstrating a strong Will to Win in the market place
-        </p>
-      </div>
-
-      <div class="card-box bg-white rounded-2xl p-6 shadow hover:shadow-lg transition">
-        <img src="src/images/Circle Layer 3.svg" alt="">
-        <h1 class="font-bold text-lg sm:text-xl pt-3">Diversity</h1>
-        <p class="text-[#999] text-sm sm:text-base pt-2">
-          Promoting Diversity in the work place and community
-        </p>
-      </div>
-
-      <div class="card-box bg-white rounded-2xl p-6 shadow hover:shadow-lg transition">
-        <img src="src/images/Circle Layer 14svg.svg" alt="">
-        <h1 class="font-bold text-lg sm:text-xl pt-3">Teamwork</h1>
-        <p class="text-[#999] text-sm sm:text-base pt-2">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. A semper aenean id pen
-        </p>
-      </div>
-
-      <div class="card-box bg-white rounded-2xl p-6 shadow hover:shadow-lg transition">
-        <img src="src/images/Circle Layer 1.svg" alt="">
-        <h1 class="font-bold text-lg sm:text-xl pt-3">Collaboration</h1>
-        <p class="text-[#999] text-sm sm:text-base pt-2">
-          Displaying the highest level of Integrity in the way we conduct our business
-        </p>
-      </div>
-
-      <div class="card-box bg-white rounded-2xl p-6 shadow hover:shadow-lg transition">
-        <img src="src/images/Circle Layer 5.svg" alt="">
-        <h1 class="font-bold text-lg sm:text-xl pt-3">Technology</h1>
-        <p class="text-[#999] text-sm sm:text-base pt-2">
-          Harnessing the power of Technology to deliver better customer experience
-        </p>
-      </div>
-
-      <div class="card-box bg-white rounded-2xl p-6 shadow hover:shadow-lg transition">
-        <img src="src/images/Circle Layer 6.svg" alt="">
-        <h1 class="font-bold text-lg sm:text-xl pt-3">Corporate</h1>
-        <p class="text-[#999] text-sm sm:text-base pt-2">
-          Setting the standard for the best Corporate Citizenship in the communities we work
-        </p>
-      </div>
-
-      <div class="card-box bg-white rounded-2xl p-6 shadow hover:shadow-lg transition">
-        <img src="src/images/Circle Layer 7.svg" alt="">
-        <h1 class="font-bold text-lg sm:text-xl pt-3">Digital</h1>
-        <p class="text-[#999] text-sm sm:text-base pt-2">
-          Setting the standard for the best Corporate Citizenship in the communities we work
-        </p>
-      </div>
-
-    </div>
-  </div>
-</div>
-
-<div class="business-partners w-full bg-[#FCE0EF33] py-20">
-  <div class="container mx-auto">
-    
-    <!-- Heading -->
-    <h1 class="text-center text-[24px] md:text-[30px] lg:text-[35px] font-bold text-[#343434]">
-      BUSINESS PARTNERS
-    </h1>
-
-    <!-- Logos -->
-    <div class="flex flex-wrap justify-center md:justify-between gap-6 md:gap-10 pt-10">
-      <img class="w-[120px] md:w-[160px] lg:w-[193px]" src="src/images/BUSINESS PARTNERS img1.png" alt="">
-      <img class="w-[120px] md:w-[160px] lg:w-[193px]" src="src/images/BUSINESS PARTNERS img2.png" alt="">
-      <img class="w-[120px] md:w-[160px] lg:w-[193px]" src="src/images/BUSINESS PARTNERS img3.png" alt="">
-      <img class="w-[120px] md:w-[160px] lg:w-[193px]" src="src/images/BUSINESS PARTNERS img4.png" alt="">
-    </div>
-
-  </div>
-</div>
-
-<div class="w-full  h-200 lg:h-150  bg-white ">
-  <div class="container flex justify-between flex-col md:flex-row items-center  gap-10 lg:gap-10 ">
-    
-    <!-- Image Section -->
-    <div class=" w-full  md:w-1/2 ">
-      <img class="max-w-[412px] w-full h-[400px] lg:max-w-[612px]  lg:h-[600px] rounded-lg" src="src/images/glance-image.jpg" alt="IPDC Glance Image">
-    </div>
-
-    <!-- Text Section -->
-    <div class="max-w-[450px] w-full h-[411px] px-[20px]  md:w-1/2">
-      <h1 class="text-[22px] sm:text-[24px] md:text-[28px] lg:text-[30px]  md:pt-2 font-bold leading-snug">
-        IPDC AT A GLANCE
-      </h1>
-      <p class="text-[#666] text-[14px] sm:text-[15px] md:text-[14px] lg:text-[18px] pt-4 leading-relaxed">
-        IPDC Finance Limited (previously known as "Industrial Promotion and Development Company of Bangladesh
-        Limited") is the first private sector financial institution of the country established in 1981 by a
-        distinguished group of shareholders namely International Finance Corporation (IFC), USA, German Investment
-        and Development Company (DEG), Germany, The Aga Khan Fund for Economic Development (AKFED), Switzerland,
-        Commonwealth Development Corporation (CDC), UK and the Government of Bangladesh.
-      </p>
-
-      <div class="flex items-center">
-        <p class="pt-6  text-[16px] sm:text-[18px] md:text-[20px] text-[#ED017F] hover:text-pink-800 cursor-pointer">
-          Read More <i class="fa-solid fa-arrow-right"></i>
-        </p>
-      </div>
-    </div>
-    
-  </div>
-</div>
-
-<div class="Our-Service w-full bg-[#FEF9FC] py-12">
-  <div class="container mx-auto px-4">
-    
-    <!-- Heading -->
-    <div class="text-center max-w-2xl mx-auto">
-      <h1 class="font-bold text-[28px] sm:text-[32px] md:text-[36px] lg:text-[40px]">Our Service</h1>
-      <p class="text-[#999] text-[14px] sm:text-[15px] md:text-[16px] pt-4">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Diam,
-        dapibus mattis vel feugiat erat tortor eleifend.
-      </p>
-    </div>
-
-    <!-- Service Cards -->
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 pt-12">
-      
       <!-- Card 1 -->
-      <div>
-        <img class="w-full h-[280px] sm:h-[320px] md:h-[365px] rounded-[20px] object-cover" src="src/images/service-1.jpg" alt="">
-        <div class="flex justify-between items-center pt-4">
-          <p class="text-[18px] sm:text-[20px] text-[#363940] font-medium">IPDC SAVING SCHEMES</p>
-          <i class="fa-solid fa-circle-arrow-right text-[28px] sm:text-[32px] md:text-[35px] text-[#ED017F] hover:text-pink-300"></i>
+      <div
+        class="max-w-[400px] mx-auto h-[260px] flex items-center flex-col gap-4 p-6 bg-white rounded-xl shadow transition duration-300 hover:shadow-2xl hover:-translate-y-2 hover:scale-105 cursor-pointer">
+        <img src="src/images/about-1.png" alt="" class="max-w-[96px] h-[96px] transition duration-300 hover:scale-110">
+        <h4 class="font-bold text-lg">Large Assortment</h4>
+        <p class="text-[#666] text-sm">We offer many different types of products with fewer variations in each category.
+        </p>
+      </div>
+
+      <!-- Card 2 -->
+      <div
+        class="max-w-[400px] mx-auto h-[260px] flex items-center flex-col gap-4 p-6 bg-white rounded-xl shadow transition duration-300 hover:shadow-2xl hover:-translate-y-2 hover:scale-105 cursor-pointer">
+        <img src="src/images/about-2.png" alt="" class="max-w-[96px] h-[96px] transition duration-300 hover:scale-110">
+        <h4 class="font-bold text-lg">Fast & Free Shipping</h4>
+        <p class="text-[#666] text-sm">4-day or less delivery time, free shipping and an expedited delivery option.</p>
+      </div>
+
+      <!-- Card 3 -->
+      <div
+        class="max-w-[400px] mx-auto h-[260px] flex items-center flex-col gap-4 p-6 bg-white rounded-xl shadow transition duration-300 hover:shadow-2xl hover:-translate-y-2 hover:scale-105 cursor-pointer">
+        <img src="src/images/about-3.png" alt="" class="max-w-[96px] h-[96px] transition duration-300 hover:scale-110">
+        <h4 class="font-bold text-lg">24/7 Support</h4>
+        <p class="text-[#666] text-sm">Answers to any business related inquiry 24/7 and in real-time.</p>
+      </div>
+
+    </div>
+  </div>
+
+
+  <div class="categories mt-30">
+    <div class="text-center container mx-auto px-6 sm:px-10 lg:px-16 2xl:px-20">
+      <h1 class="font-bold text-3xl mb-5">Categories</h1>
+      <p class="text-[#999]">Find what you are looking for</p>
+    </div>
+
+    <div class="w-full bg-[#C1DCDC] mt-10 py-10">
+
+      <div
+        class="flex flex-col sm:flex-row flex-wrap gap-6 sm:gap-8 lg:gap-10 justify-center items-center lg:items-start">
+
+        <!-- Card 1 -->
+        <div class="group bg-white rounded-xl p-5 shadow-md hover:shadow-2xl transition duration-500 transform hover:-translate-y-3 hover:scale-105 text-center cursor-pointer
+                  w-full sm:w-[45%] md:w-[32%] lg:w-[28%]">
+          <div class="overflow-hidden rounded-lg">
+            <img src="src/images/c-1.jpg" alt=""
+              class="w-full h-[320px] sm:h-[360px] md:h-[380px] lg:h-[420px] object-cover mx-auto transform transition duration-500 group-hover:scale-110">
+          </div>
+          <h5
+            class="font-bold pt-3 text-lg transition duration-300 group-hover:text-[#C1DCDC] group-hover:underline group-hover:underline-offset-4">
+            Natural Plants
+          </h5>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="group bg-white rounded-xl p-5 shadow-md hover:shadow-2xl transition duration-500 transform hover:-translate-y-3 hover:scale-105 text-center cursor-pointer
+                  w-full sm:w-[45%] md:w-[32%] lg:w-[28%]">
+          <div class="overflow-hidden rounded-lg">
+            <img src="src/images/c-2.png" alt=""
+              class="w-full h-[320px] sm:h-[360px] md:h-[380px] lg:h-[420px] object-cover mx-auto transform transition duration-500 group-hover:scale-110">
+          </div>
+          <h5
+            class="font-bold pt-3 text-lg transition duration-300 group-hover:text-[#C1DCDC] group-hover:underline group-hover:underline-offset-4">
+            Plant Accessories
+          </h5>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="group bg-white rounded-xl p-5 shadow-md hover:shadow-2xl transition duration-500 transform hover:-translate-y-3 hover:scale-105 text-center cursor-pointer
+                  w-full sm:w-[45%] md:w-[32%] lg:w-[28%]">
+          <div class="overflow-hidden rounded-lg">
+            <img src="src/images/c-3.png" alt=""
+              class="w-full h-[320px] sm:h-[360px] md:h-[380px] lg:h-[420px] object-cover mx-auto transform transition duration-500 group-hover:scale-110">
+          </div>
+          <h5
+            class="font-bold pt-3 text-lg transition duration-300 group-hover:text-[#C1DCDC] group-hover:underline group-hover:underline-offset-4">
+            Artificial Plants
+          </h5>
+        </div>
+
+      </div>
+
+      <!-- Text + Button -->
+      <div class="text-center mt-10 px-6 sm:px-10 lg:px-16 2xl:px-20">
+        <p class="text-gray-500">Horem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        <button
+          class="px-6 py-2 bg-white rounded mt-10 flex items-center gap-2 mx-auto hover:bg-gray-200 hover:scale-105 shadow transition duration-300">
+          Explore
+          <ion-icon name="arrow-forward-outline"></ion-icon>
+        </button>
+      </div>
+    </div>
+  </div>
+
+
+
+
+  <div class="feedback container mx-auto w-full mt-20 px-4">
+    <!-- Heading -->
+    <div class="text-center mb-10">
+      <h1 class="font-bold text-2xl sm:text-3xl">
+        What customers say about GREENMIND?
+      </h1>
+    </div>
+
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-10">
+
+      <!-- Card 1 -->
+      <div
+        class="bg-[#C1DCDC] p-6 sm:p-8 lg:p-10 rounded-2xl min-h-[300px] flex flex-col justify-between transition transform hover:-translate-y-2 hover:shadow-xl duration-300">
+        <p class="text-gray-600 font-medium mt-4 sm:mt-6 lg:mt-10 text-sm sm:text-base">
+          Jorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet
+          odio
+          mattis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
+        </p>
+        <div class="flex flex-row items-center justify-between mt-6">
+          <div class="flex flex-row items-center gap-3">
+            <img src="src/images/feedback-1.png" alt="" class="w-16 h-20 sm:w-20 sm:h-28 object-cover rounded-lg">
+            <div>
+              <h4 class="font-bold text-base sm:text-lg">John Doe</h4>
+              <p class="text-gray-500 text-sm">Youtuber</p>
+            </div>
+          </div>
+          <div class="flex flex-row items-center gap-2">
+            <ion-icon name="star" class="text-yellow-500 text-lg"></ion-icon>
+            <p class="font-bold">4.5</p>
+          </div>
         </div>
       </div>
 
       <!-- Card 2 -->
-      <div>
-        <img class="w-full h-[280px] sm:h-[320px] md:h-[365px] rounded-[20px] object-cover" src="src/images/service-2.jpg" alt="">
-        <div class="flex justify-between items-center pt-4">
-          <p class="text-[18px] sm:text-[20px] text-[#363940] font-medium">IPDC PERSONAL LOAN</p>
-          <i class="fa-solid fa-circle-arrow-right text-[28px] sm:text-[32px] md:text-[35px] text-[#ED017F] hover:text-pink-300"></i>
-        </div>
-      </div>
-
-      <!-- Card 3 -->
-      <div>
-        <img class="w-full h-[280px] sm:h-[320px] md:h-[365px] rounded-[20px] object-cover" src="src/images/service-3.jpg" alt="">
-        <div class="flex justify-between items-center pt-4">
-          <p class="text-[18px] sm:text-[20px] text-[#363940] font-medium">IPDC DEPOSIT SCHEMES</p>
-          <i class="fa-solid fa-circle-arrow-right text-[28px] sm:text-[32px] md:text-[35px] text-[#ED017F] hover:text-pink-300"></i>
-        </div>
-      </div>
-
-      <!-- Card 4 -->
-      <div>
-        <img class="w-full h-[280px] sm:h-[320px] md:h-[365px] rounded-[20px] object-cover" src="src/images/service-4.jpg" alt="">
-        <div class="flex justify-between items-center pt-4">
-          <p class="text-[18px] sm:text-[20px] text-[#363940] font-medium">IPDC AUTO LOAN</p>
-          <i class="fa-solid fa-circle-arrow-right text-[28px] sm:text-[32px] md:text-[35px] text-[#ED017F] hover:text-pink-300"></i>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</div>
-
-<div class="RESULT w-full bg-white py-12">
-  <div class="container mx-auto text-center px-4">
-    <!-- Heading Section -->
-    <div>
-      <h1 class="text-[24px] md:text-[36px] lg:text-[40px] font-bold text-[#343434]">
-        Our best results for the year
-      </h1>
-      <p class="text-[#999] text-[14px] md:text-[16px]  mt-4">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Diam, dapibus mattis vel
-        feugiat erat tortor eleifend.
-      </p>
-    </div>
-
-    <!-- Result Boxes -->
-    <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-8 md:gap-12 mt-10 max-w-[1040px] mx-auto">
-      
-      <div class="result-box">
-        <h1 class="text-[28px] md:text-[32px] lg:text-[40px] font-bold text-[#ED017F]">57.6 bn</h1>
-        <p class="text-[14px] md:text-[16px] text-[#999]">LOAN PORTFOLIO</p>
-      </div>
-
-      <div class="result-box">
-        <h1 class="text-[28px] md:text-[32px] lg:text-[40px] font-bold">0.95%</h1>
-        <p class="text-[14px] md:text-[16px] text-[#999]">CLASSIFIED LOAN PORTFOLIO</p>
-      </div>
-
-      <div class="result-box">
-        <h1 class="text-[28px] md:text-[32px] lg:text-[40px] font-bold">388.5%</h1>
-        <p class="text-[14px] md:text-[16px] text-[#999]">CLASSIFIED LOAN Coverage</p>
-      </div>
-
-      <div class="result-box">
-        <h1 class="text-[28px] md:text-[32px] lg:text-[40px] font-bold">50.4 bn</h1>
-        <p class="text-[14px] md:text-[16px] text-[#999]">Deposit</p>
-      </div>
-
-      <div class="result-box">
-        <h1 class="text-[28px] md:text-[32px] lg:text-[40px] font-bold">6.1 bn</h1>
-        <p class="text-[14px] md:text-[16px] text-[#999]">Shareholders equity</p>
-      </div>
-
-      <div class="result-box">
-        <h1 class="text-[28px] md:text-[32px] lg:text-[40px] font-bold">18.51%</h1>
-        <p class="text-[14px] md:text-[16px] text-[#999]">Capital Adequacy Ratio</p>
-      </div>
-
-      <div class="result-box">
-        <h1 class="text-[28px] md:text-[32px] lg:text-[40px] font-bold">8.5 bn</h1>
-        <p class="text-[14px] md:text-[16px] text-[#999]">Market Capitalization</p>
-      </div>
-
-      <div class="result-box">
-        <h1 class="text-[28px] md:text-[32px] lg:text-[40px] font-bold">AAA</h1>
-        <p class="text-[14px] md:text-[16px] text-[#999]">Credit Rating</p>
-      </div>
-
-    </div>
-  </div>
-</div>
-
-<div class="newsletter w-full bg-[#FEF9FC] py-12">
-  <div class="container mx-auto text-center px-4">
-    <!-- Heading -->
-    <div>
-      <h1 class="text-[#343434] text-[28px] md:text-[32px] lg:text-[36px] font-bold">
-        Newsletter
-      </h1>
-      <p class="text-[#999] text-[14px] md:text-[16px] pt-4 max-w-[600px] mx-auto">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eget ac quis
-        aliquam arcu lacus.
-      </p>
-    </div>
-
-    <!-- Input + Button -->
-    <div class="pt-8 flex flex-col sm:flex-row items-center justify-center gap-3">
-      <input
-        class="bg-white w-full sm:w-[300px] md:w-[343px] h-[42px] border border-gray-300 rounded-[10px] px-3 italic"
-        type="text"
-        placeholder="Your email"
-      >
-      <button
-        class="w-full sm:w-auto px-5 py-2.5 bg-[#ED017F] rounded-[10px] text-white hover:bg-pink-300 font-medium"
-      >
-        SUBSCRIBE
-      </button>
-    </div>
-  </div>
-</div>
-
-<footer class="w-full bg-white py-10">
-  <div class="container mx-auto flex flex-col items-center text-center md:flex-row justify-between gap-10 px-4">
-    <!-- Left side (About + Links) -->
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 ">
-      <!-- About -->
-      <div class="about max-w-[220px] flex items-center flex-col">
-        <h1 class="text-[18px] font-bold">About the company</h1>
-        <p class="text-[#999] text-[13px] pt-4">
-          Learn To Love Growth And Change And You Will Be A Success.
-          Microsoft Patch
+      <div
+        class="bg-[#C1DCDC] p-6 sm:p-8 lg:p-10 rounded-2xl min-h-[300px] flex flex-col justify-between transition transform hover:-translate-y-2 hover:shadow-xl duration-300">
+        <p class="text-gray-600 font-medium mt-4 sm:mt-6 lg:mt-10 text-sm sm:text-base">
+          Jorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet
+          odio
+          mattis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
         </p>
-        <div class="pt-6 flex gap-5">
-          <i class="fa-brands fa-facebook-f text-[#4B7FCD]"></i>
-          <i class="fa-brands fa-youtube text-[#FF0000]"></i>
-          <i class="fa-brands fa-linkedin-in text-[#4A71FB]"></i>
-          <i class="fa-brands fa-instagram text-[#ED017F]"></i>
+        <div class="flex flex-row items-center justify-between mt-6">
+          <div class="flex flex-row items-center gap-3">
+            <img src="src/images/feedback-2.png" alt="" class="w-16 h-20 sm:w-20 sm:h-28 object-cover rounded-lg">
+            <div>
+              <h4 class="font-bold text-base sm:text-lg">Sarah Lee</h4>
+              <p class="text-gray-500 text-sm">Designer</p>
+            </div>
+          </div>
+          <div class="flex flex-row items-center gap-2">
+            <ion-icon name="star" class="text-yellow-500 text-lg"></ion-icon>
+            <p class="font-bold">5.0</p>
+          </div>
         </div>
       </div>
 
-      <!-- Products -->
-      <div class="product">
-        <h1 class="text-[18px] font-bold">Products</h1>
-        <ul class="list-none space-y-3 pt-4">
-          <li><a class="text-[#999] text-[13px] hover:text-[#ED017F]" href="#">CSR Activities</a></li>
-          <li><a class="text-[#999] text-[13px] hover:text-[#ED017F]" href="#">Green Banking</a></li>
-          <li><a class="text-[#999] text-[13px] hover:text-[#ED017F]" href="#">News</a></li>
-          <li><a class="text-[#999] text-[13px] hover:text-[#ED017F]" href="#">Ongoing Campgain</a></li>
-          <li><a class="text-[#999] text-[13px] hover:text-[#ED017F]" href="#">Updates</a></li>
-        </ul>
-      </div>
-
-      <!-- Get Started -->
-      <div class="product">
-        <h1 class="text-[18px] font-bold">Get Started</h1>
-        <ul class="list-none space-y-3 pt-4">
-          <li><a class="text-[#999] text-[13px] hover:text-[#ED017F]" href="#">Career</a></li>
-          <li><a class="text-[#999] text-[13px] hover:text-[#ED017F]" href="#">Contact Us</a></li>
-          <li><a class="text-[#999] text-[13px] hover:text-[#ED017F]" href="#">Government Securities</a></li>
-          <li><a class="text-[#999] text-[13px] hover:text-[#ED017F]" href="#">Examples</a></li>
-          <li><a class="text-[#999] text-[13px] hover:text-[#ED017F]" href="#">NIS</a></li>
-        </ul>
-      </div>
-
-      <!-- About Links -->
-      <div class="product">
-        <h1 class="text-[18px] font-bold">About</h1>
-        <ul class="list-none space-y-3 pt-4">
-          <li><a class="text-[#999] text-[13px] hover:text-[#ED017F]" href="#">IPDC at a Glance</a></li>
-          <li><a class="text-[#999] text-[13px] hover:text-[#ED017F]" href="#">Mission, Vision & Values</a></li>
-          <li><a class="text-[#999] text-[13px] hover:text-[#ED017F]" href="#">Corporate Governanace</a></li>
-          <li><a class="text-[#999] text-[13px] hover:text-[#ED017F]" href="#">Shareholders</a></li>
-          <li><a class="text-[#999] text-[13px] hover:text-[#ED017F]" href="#">Investor Relations</a></li>
-        </ul>
-      </div>
-    </div>
-
-    <!-- Right side (Phone) -->
-    <div class="flex gap-3 text-[20px] items-center justify-center md:justify-end">
-      <i class="fa-solid fa-phone text-[#ED017F]"></i>
-      <h1 class="font-bold">16519</h1>
     </div>
   </div>
-</footer>
 
-  </div>
+
+  <footer class="bg-[#C1DCDC] w-full mt-20 px-6 sm:px-10 lg:px-20 py-10">
+    <div class="flex flex-col md:flex-row justify-center items-center gap-12 container mx-auto text-center">
+
+      <!-- Footer Left -->
+      <div class="footer-left w-full md:w-1/3 text-center">
+        <!-- Logo -->
+        <h1 class="font-['Dancing_Script'] text-3xl font-bold text-[#2d5d5d] 
+             transition duration-300 hover:text-[#1a3c3c] hover:scale-110 cursor-pointer">
+          GREENMIND
+        </h1>
+        <p class="text-gray-600 text-sm sm:text-base">
+          We help you find your dream plant
+        </p>
+
+        <!-- Icons -->
+        <div class="text-[28px] mt-5 text-gray-700 flex gap-5 justify-center">
+          <ion-icon name="logo-facebook"
+            class="cursor-pointer transition duration-300 hover:text-[#1a3c3c] hover:scale-125 hover:-rotate-6"></ion-icon>
+          <ion-icon name="logo-instagram"
+            class="cursor-pointer transition duration-300 hover:text-[#1a3c3c] hover:scale-125 hover:rotate-6"></ion-icon>
+          <ion-icon name="logo-twitter"
+            class="cursor-pointer transition duration-300 hover:text-[#1a3c3c] hover:scale-125 hover:-rotate-3"></ion-icon>
+        </div>
+      </div>
+
+      <!-- Footer Right -->
+      <div class="footer-right grid grid-cols-2 gap-10 w-full md:w-2/3 text-center justify-items-center sm:grid-cols-3">
+
+        <!-- Information -->
+        <div>
+          <h5 class="font-bold mb-3">Information</h5>
+          <div class="text-gray-700 flex flex-col gap-3">
+            <a href="#"
+              class="relative after:absolute after:w-0 after:h-[2px] after:bg-[#1a3c3c] after:left-0 after:-bottom-1 hover:after:w-full after:transition-all after:duration-300 hover:text-[#1a3c3c]">About</a>
+            <a href="#"
+              class="relative after:absolute after:w-0 after:h-[2px] after:bg-[#1a3c3c] after:left-0 after:-bottom-1 hover:after:w-full after:transition-all after:duration-300 hover:text-[#1a3c3c]">Product</a>
+            <a href="#"
+              class="relative after:absolute after:w-0 after:h-[2px] after:bg-[#1a3c3c] after:left-0 after:-bottom-1 hover:after:w-full after:transition-all after:duration-300 hover:text-[#1a3c3c]">Blog</a>
+          </div>
+        </div>
+
+        <!-- Company -->
+        <div>
+          <h5 class="font-bold mb-3">Company</h5>
+          <div class="text-gray-700 flex flex-col gap-3">
+            <a href="#"
+              class="relative after:absolute after:w-0 after:h-[2px] after:bg-[#1a3c3c] after:left-0 after:-bottom-1 hover:after:w-full after:transition-all after:duration-300 hover:text-[#1a3c3c]">Community</a>
+            <a href="#"
+              class="relative after:absolute after:w-0 after:h-[2px] after:bg-[#1a3c3c] after:left-0 after:-bottom-1 hover:after:w-full after:transition-all after:duration-300 hover:text-[#1a3c3c]">Career</a>
+            <a href="#"
+              class="relative after:absolute after:w-0 after:h-[2px] after:bg-[#1a3c3c] after:left-0 after:-bottom-1 hover:after:w-full after:transition-all after:duration-300 hover:text-[#1a3c3c]">Our
+              story</a>
+          </div>
+        </div>
+
+        <!-- Contact -->
+        <div class="col-span-2 sm:col-span-1">
+          <h5 class="font-bold mb-3">Contact</h5>
+          <div class="text-gray-700 flex flex-col gap-3">
+            <a href="#"
+              class="relative after:absolute after:w-0 after:h-[2px] after:bg-[#1a3c3c] after:left-0 after:-bottom-1 hover:after:w-full after:transition-all after:duration-300 hover:text-[#1a3c3c]">Getting
+              Started</a>
+            <a href="#"
+              class="relative after:absolute after:w-0 after:h-[2px] after:bg-[#1a3c3c] after:left-0 after:-bottom-1 hover:after:w-full after:transition-all after:duration-300 hover:text-[#1a3c3c]">Pricing</a>
+            <a href="#"
+              class="relative after:absolute after:w-0 after:h-[2px] after:bg-[#1a3c3c] after:left-0 after:-bottom-1 hover:after:w-full after:transition-all after:duration-300 hover:text-[#1a3c3c]">Resources</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </footer>
+
   <script type="module" src="/src/main.js"></script>
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </body>
 
 </html>
